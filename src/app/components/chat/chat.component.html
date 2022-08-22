@@ -1,0 +1,22 @@
+<div class="card text-center cardContainer">
+    <div class="card-header">
+      <b>CHAT</b>
+    </div>
+
+    <div class="card-body">
+     
+    </div>
+
+    <form class="card-footer text-muted input-group" (ngSubmit)="enviarMessage()">
+        
+            <input   type="text" class="form-control" placeholder="Ingrese su mensaje"  [(ngModel)]="newMensaje"
+            [ngModelOptions]="{standalone:true}" >
+            <div class="input-group-append" (click)="enviarMessage()">
+              <span class="input-group-text" id="basic-addon2">
+                
+                <img class="imgEnviar" src="../../../assets/images/send-chat.png" alt="Eviar el mensaje" width="40px">
+            </span>
+            </div>
+       
+        </form>
+  </div>

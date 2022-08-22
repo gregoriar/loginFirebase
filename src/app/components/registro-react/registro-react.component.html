@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <b>REGISTRO</b>
+          </div>
+        <form [formGroup]="form" novalidate (ngSubmit)="save($event)" >
+            <span>
+                    Email: <br/>
+                    <input type="email" formControlName="email">
+
+                    <div *ngIf="txtEmail.errors && txtEmail.touched">
+                        <span class="msgError_req"  *ngIf="txtEmail.hasError('required')">                                                                 
+                            Email es un campo requerido
+                        </span>
+                        <span class="msgError_req"  *ngIf="txtEmail.hasError('email')">                                                                 
+                            No es un email válido
+                        </span>
+                    </div>
+            </span><br/>
+
+            <span>
+                Password: <br/>
+                <input type="password" formControlName="password">
+
+                <div *ngIf="txtPassword.errors && txtPassword.touched">
+                    <span class="msgError_req"  *ngIf="txtPassword.hasError('required')">                                                                 
+                        Password es requerido
+                    </span>
+
+                    <span class="msgError_req"  *ngIf="txtPassword.hasError('minlength')">
+                        Password debe tener Mínimo 6 caracteres.
+                    </span>
+
+                    <span class="msgError_req"  *ngIf="txtPassword.hasError('maxlength')">
+                        Password debe tener Máximo  8 caracteres.
+                    </span>
+                </div>
+            </span>
+
+                   
+          <!-- Button trigger modal -->
+        <br/>
+          <button  type="button"   style="margin-top: 8px;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="blanquearMsgError()">
+            Verificar
+          </button>
+
+               <!--Modal-->
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content" style="align-items: center;" >
+                      <div class="modal-header">
+                        <h5 class="modal-title"  id="exampleModalLabel">Aviso de Registro en AppFirebasePrueba</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                   <!--   <div class="modal-body">
+                        Se habilitará su registro como usuario de appLoginFirebase, con el email <span class="msgError_email" > {{form.value.email}}</span>, puede abandonar y cerrar la ventana. Si el registro se efectúa sin problemas,
+                        será redireccionado al dashboard de esta App. 
+        
+                      </div>
+                    -->
+
+                    <!--  Modal ajustado con span en modo ngIf para validar en cuerpo modal-->
+                      <div class="modal-body">
+                        Se habilitará su registro como usuario de appLoginFirebase, con el email <span *ngIf="(form.value.email.length!=0); else elseIngreseEmail" class="msgError_email" > {{form.value.email}}</span>, puede abandonar y cerrar la ventana. Si el registro se efectúa sin problemas,
+                        será redireccionado al dashboard de esta App. 
+
+                        <ng-template #elseIngreseEmail>
+
+                            <span class="msgError_email">Ingrese un email válido para intentar registro</span>
+
+                        </ng-template>
+        
+                      </div>
+
+
+                      <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> 
+                      <!--  button  original de la modal <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="registrar()">Registrarse</button>   -->
+                          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >Registrar </button>
+                          <br/>
+                              
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Final de  Ventana Modal -->
+
+          <!--   este es el button del form reactive 
+                <button type="submit" class="btn  btn-primary" >Registrarse</button>  -->
+
+                <div  *ngIf="[msgErrorForm != null && mostrar]" >
+
+                    <span class="msgError_req">{{msgErrorForm}}</span> 
+
+                </div> 
+
+
+        </form>
+    </div>
+</div>

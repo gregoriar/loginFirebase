@@ -1,0 +1,33 @@
+<!-- Image and text -->
+<nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="../../../assets/images/firebase3.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        LoginFirebase
+      </a>
+    
+
+      <div ngbDropdown class="d-inline-block" *ngIf="userLogged|async as user; else btnIngresar">
+        <button  class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+          <img style="border-radius: 100%;" *ngIf="user.photoURL" src="{{user.photoURL}}" 
+          width="30" height="30" class="d-inline-block align-top" alt="">
+          {{user.displayName ? user.displayName : user.email}}
+        
+        </button>
+        
+      
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            
+            <button ngbDropdownItem (click)="logout()">Salir</button>
+
+          </div>
+
+      </div>
+
+
+        <ng-template #btnIngresar>
+
+          <button class="btn btn-outline-primary" routerLink="/login_react">Ingresar </button>
+
+        </ng-template>
+
+  </nav>

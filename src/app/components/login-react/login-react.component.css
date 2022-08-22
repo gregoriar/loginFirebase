@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height:100vh;
+
+}
+.msgError_req{
+    font-size:x-small;
+    font-weight: bold;
+    color: red;
+}
+
+.msgError_email{
+    font-size: x-large;
+    font-weight: bold;
+    color: red
+
+}
