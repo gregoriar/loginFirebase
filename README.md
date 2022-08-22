@@ -44,4 +44,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## App Description 
-LoginFire, with the use of reactive forms of Angular, the registration methods of a new user, login and login from Google against the Google Firebase database are implemented. Basic validations are implemented in TypeScript, with FormGroup from ReactiveForms
+LoginFire, with the use of reactive forms of Angular, the registration methods of a new user, login and login from Google against the Google Firebase database are implemented. Basic validations are implemented in TypeScript, with FormGroup from ReactiveForms.The validations corresponding to the registration of new users (that the user to register does not exist) and the access of registered users (access with the valid authorization method and/or the valid email and password combination) are also implemented.
