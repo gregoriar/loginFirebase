@@ -1,16 +1,16 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+//Datos del módulo de autorización de la App dentro de Firebase
 export const environment = {
   production: false,
    firebaseConfig : {
-    apiKey: "AIzaSyD2KrAX7DkDBjDLgE16SdPFZ2d5PYu5Wu8",
+    apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     authDomain: "auth-loginfire.firebaseapp.com",
     projectId: "auth-loginfire",
     storageBucket: "auth-loginfire.appspot.com",
-    messagingSenderId: "838821676105",
-    appId: "1:838821676105:web:8f3a409f4acae437346b98"
+    messagingSenderId: "9999999999999999999999",
+    appId: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
   }
 };
