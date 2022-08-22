@@ -34,10 +34,7 @@ export class AuthService {
       
       return err.code;
 
-      /* Hacer este ajuste para login component, en caso de ingresar la clave errada, o el email errado
-      /* ajustaré la interfaz cuando haya depurado el form-bulma de la aplicacion angular-forms de mis ejercicios en CursoAngular
-
-       console.log("Error en login ", err.code);
+        console.log("Error en login ", err.code);
       //err.code="auth/wrong-password" , si el  email  del usiario existe pero ingresó con password errado
       //err.code="auth/user-not-found", si el email del usuario NO existe en la app
       return err.code;
