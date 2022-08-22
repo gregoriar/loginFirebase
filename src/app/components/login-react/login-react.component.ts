@@ -38,7 +38,7 @@ export class LoginReactComponent implements OnInit {
       this.form = this.formBuilder.group({
         email: ['', [Validators.required, Validators.email]],
 
-        password: ['', [Validators.required,Validators.minLength(6),Validators.maxLength(8)]]
+        password: ['', [Validators.required,Validators.minLength(6),Validators.maxLength(15)]]
         
       });
 
@@ -68,9 +68,9 @@ export class LoginReactComponent implements OnInit {
         
         console.log("Se logueó con correo y clave del sistema " ,res);
         
-        if(res=="auth/user-not-found"){         
+        if(res=="auth/user-not-found" || res=="auth/wrong-password"){         
          
-          this.msgErrorForm="La dirección email "+ this.form.value.email +" no existe como usuario registrado de esta app";
+          this.msgErrorForm="Error en el email: "+ this.form.value.email +"/en el password ó método de registro en esta App";
          
           this.mostrar=true;
         //this.router.navigate(['/nohome']);

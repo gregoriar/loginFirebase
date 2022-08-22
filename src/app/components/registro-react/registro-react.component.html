@@ -3,7 +3,7 @@
         <div class="card-header">
             <b>REGISTRO</b>
           </div>
-        <form [formGroup]="form" novalidate (ngSubmit)="save($event)" >
+        <form [formGroup]="form" novalidate (ngSubmit)="registroUser($event)" >
             <span>
                     Email: <br/>
                     <input type="email" formControlName="email">

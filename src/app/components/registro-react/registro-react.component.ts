@@ -28,7 +28,7 @@ export class RegistroReactComponent implements OnInit {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
 
-      password: ['', [Validators.required,Validators.minLength(6),Validators.maxLength(8)]]
+      password: ['', [Validators.required,Validators.minLength(6),Validators.maxLength(15)]]
       
     });
 
@@ -43,7 +43,7 @@ export class RegistroReactComponent implements OnInit {
     });*/
   }
 
-  save(event: Event) {
+  registroUser(event: Event) {
     event.preventDefault();
     if(this.form.valid){
       const value = this.form.value;
